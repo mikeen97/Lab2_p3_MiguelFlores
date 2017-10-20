@@ -6,7 +6,7 @@ using namespace std;
 int numPrimo(int);
 int SumaMultiplo(int,int,int);
 bool NumMultiplo(int,int);
-void GoldBatch(int);
+void Ejercicio3(int);
 bool verificarPrimo(int);
 
 int main(){
@@ -46,7 +46,7 @@ int main(){
 				int numero=0;
 				cout<<"Ingrese el numero que desea: ";
 				cin>> numero;
-				GoldBatch(numero);
+				Ejercicio3(numero);
 			}//case 3
 			break;
 		}//switch
@@ -114,16 +114,20 @@ bool verificarPrimo(int n){
 }
 
 
-void GoldBatch(int num){
+void Ejercicio3(int num){
 int numero1=0;
 int numero2=0;
-	for(int i=0;i<num;i++){
-		if(verificarPrimo(i)==true){
-			numero1=i;
-			if(verificarPrimo(num-numero1)==true){
-				numero2 = num-numero1;
-				cout<<"Los numeros seran:"<<numero1<<" y "<<numero2<<"\n";
+	if(num>2 && num<150){
+		for(int i=0;i<num;i++){
+			if(verificarPrimo(i)==true){
+				numero1=i;
+				if(verificarPrimo(num-numero1)==true){
+					numero2 = num-numero1;
+					cout<<"Los numeros seran:"<<numero1<<" y "<<numero2<<"\n";
+				}
 			}
 		}
+	}else{
+		cout<<"Ingrese un valor correcto";
 	}
 }
