@@ -6,6 +6,8 @@ using namespace std;
 int numPrimo(int);
 int SumaMultiplo(int,int,int);
 bool NumMultiplo(int,int);
+void GoldBatch(int);
+bool verificarPrimo(int);
 
 int main(){
 	int opcion = 0;
@@ -41,7 +43,10 @@ int main(){
 				   }//case2
 			break;
 			case 3:{
-
+				int numero=0;
+				cout<<"Ingrese el numero que desea: ";
+				cin>> numero;
+				GoldBatch(numero);
 			}//case 3
 			break;
 		}//switch
@@ -91,3 +96,34 @@ bool NumMultiplo(int Num, int iteracion){
 	return prueba;
 }
 
+bool verificarPrimo(int n){
+	int contador=0;
+	bool prueba=false;
+	for(int j=1;j<=n;j++){
+		if(n % j == 0){
+			contador++;
+		}
+	}
+	if(contador==2){
+		prueba=true;
+	}else{
+		prueba=false;
+	}
+
+		return prueba;
+}
+
+
+void GoldBatch(int num){
+int numero1=0;
+int numero2=0;
+	for(int i=0;i<num;i++){
+		if(verificarPrimo(i)==true){
+			numero1=i;
+			if(verificarPrimo(num-numero1)==true){
+				numero2 = num-numero1;
+				cout<<"Los numeros seran:"<<numero1<<" y "<<numero2<<"\n";
+			}
+		}
+	}
+}
